@@ -3,6 +3,7 @@
 ## Contributor
 #### Kevin Hartmann 
 _**Front-end Software Engineer**_ - _Mod 2 Student_ - [Turing School Of Software Design](https://turing.io/programs/)
+- [application](https://jobs.smartrecruiters.com/ni/Shopify/ee14b4f1-62ec-4a47-850b-2311c57f855b-front-end-developer-intern-remote-summer-2021)
 - [linkedIn](https://www.linkedin.com/in/kevin-hartmann/)
 - [github](https://github.com/kevinhartmann23)
 
