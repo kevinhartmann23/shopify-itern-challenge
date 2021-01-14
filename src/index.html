@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Static Comp Challenge</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="./assets/icons/golfcaddy.ico">
+  </head>
+  <body>
+    <nav class="navigation-bar">
+      <div class="nav-icons">
+        <img class="icons menu" src="./assets/menu.png" alt="menu">
+        <div class="option-wrapper">
+          <img class="icons search" src="./assets/search.png" alt="courses">
+          <label for='search-input'>Search For Movies...
+          <input id='search-input' class='search-input' type='text' placeholder='by title, or year of release' value=''>
+          </label>
+        </div>
+        </div>
+      <div class="menu-wrapper">
+        <!-- <div class="dropdown-menu"> -->
+          <div class="option-wrapper user">
+            <!-- <div class="dropdown-content">
+              <span class="dropdown-item" id="user-info">account</span>
+              <span class="dropdown-item" id="logout">logout</span>
+            </div> -->
+            <img class="icons profile" src="./assets/user.png" alt="profile">
+            <p class="menu-options username">username</p>
+            <img class="icons drop" src="./assets/dropdown.png" alt="menu">
+          </div>
+        <!-- </div> -->
+        <img class="logo" src="./assets/logo.png" alt="courses">
+      </div>
+    </nav>
+    <h2 class="intro-title">Search Results...</h2>
+    <section class="card-display">
+      <article class="card-grid">
+          <div class="image flatirons">
+            <div class="rated-wrapper">
+              <h2 class="rated">RATED</h2>
+              <h3 class="rated-count">PG-13</h3>
+            </div>
+          </div>
+          <div class="title-wrapper">
+            <h4 class="movie-title">INNER HTML HERE()</h4>
+          </div>
+          <div class="plot-wrapper">
+            <h4 class="plot-title">Plot:</h4>
+            <p class="plot">inner html here</p>
+          </div>
+          <div class="year-wrapper">
+            <h4 class="year-title">Year:</h4>
+            <p class="year">innner Text here</p>
+          </div>
+          <div class="score-wrapper">
+            <h4 class="score-title">IMDB:</h4>
+            <p class="score">8.6</p>
+            <img class="nominate" src="./assets/nominate.png" alt="nominate for an award">
+          </div>
+      </article>
+    </section>
+  </body>
+</html>
