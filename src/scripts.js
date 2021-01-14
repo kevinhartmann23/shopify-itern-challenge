@@ -2,11 +2,9 @@
 let displayGrid = document.querySelector('.card-display');
 let searchButton = document.querySelector('.search')
 let searchInput = document.querySelector('.search-input');
-// let nominateButton = document.querySelectorAll('.nominate')
 
 //EVENT HANDLERS
 searchButton.addEventListener('click', submitSearch)
-  // nominateButton.addEventListener('click', nominateMovie)
 
 //GLOBALS
 let movieData = [];
@@ -29,8 +27,7 @@ function submitSearch(){
 }
 
 function nominateMovie(event){
-  let id = event.target.id
-  return nominatedFilms.push(movieData.find(movie => movie.id === id))
+  return nominatedFilms.push(movieData.find(movie => movie.imdbID === event.target.id))
 }
 
 
@@ -51,5 +48,10 @@ function createGrid(){
         </button>
   </article>
   `
+  })
+  let nominateButton = document.querySelectorAll('.nominate-button')
+
+  nominateButton.forEach(button => {
+    button.addEventListener('click', nominateMovie)
   })
 }
