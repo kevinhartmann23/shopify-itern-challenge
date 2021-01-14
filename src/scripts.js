@@ -2,9 +2,11 @@
 let displayGrid = document.querySelector('.card-display');
 let searchButton = document.querySelector('.search')
 let searchInput = document.querySelector('.search-input');
+// let nominateButton = document.querySelectorAll('.nominate')
 
 //EVENT HANDLERS
 searchButton.addEventListener('click', submitSearch)
+  // nominateButton.addEventListener('click', nominateMovie)
 
 //GLOBALS
 let movieData = [];
@@ -26,6 +28,11 @@ function submitSearch(){
   searchInput.value = ''
 }
 
+function nominateMovie(event){
+  let id = event.target.id
+  return nominatedFilms.push(movieData.find(movie => movie.id === id))
+}
+
 
 
 //DOM HELPERS
@@ -34,19 +41,14 @@ function createGrid(){
   movieData.forEach(movie => {
   displayGrid.innerHTML += `
   <article class="card-grid">
-      <div id="${movie.imdbID}" class="image-wrapper">
-        <img id="${movie.imdbID}" class="image" src="${movie.Poster}" alt="nominate for an award">
+      <div class="image-wrapper">
+        <img class="image" src="${movie.Poster}" alt="nominate for an award">
       </div>
-      <div class="title-wrapper">
         <h4 class="movie-title">${movie.Title}</h4>
-      </div>
-      <div class="year-wrapper">
-        <h4 class="year-title">Year:</h4>
-        <p class="year">${movie.Year}</p>
-      </div>
-      <div class="nominate-wrapper">
+        <h4 class="year-title">Year: ${movie.Year}</h4>
+        <button id='${movie.imdbID}' class='nominate-button'>Nominate
         <img id="${movie.imdbID}" class="nominate" src="./assets/nominate.png" alt="nominate for an award">
-      </div>
+        </button>
   </article>
   `
   })

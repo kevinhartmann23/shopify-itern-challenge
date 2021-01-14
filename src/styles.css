@@ -161,9 +161,8 @@ body {
   grid-template-columns: repeat(4, 18.5em);
   grid-template-rows: repeat(3, 28em);
   grid-auto-flow: dense;
-  grid-gap: .75em;
+  grid-gap: 1.5em;
   margin: 1em;
-  justify-content: center;
 }
 
 .card-grid {
@@ -172,140 +171,45 @@ body {
   background-color: #FFFFFF;
   box-shadow: 0 -1px 3px 2px #DFE1E0;
   border-radius: .1em;
+  justify-content: space-around;
 }
 
 .image {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  /* filter: blur(1px); */
   width: 18.5em;
-  height: 12em;
+  height: 15em;
 }
 
-.cart:hover {
-  cursor: pointer;
-}
 
-.rated-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.movie-title,
+.year-title {
+  font-size: 1em;
   text-align: center;
-  color: #373F47;
-  width: 25%;
+  width: auto;
+  padding: 5px;
 }
 
-.rated {
-  font-size: .75em;
-  font-weight: 300;
-  margin-top: 1em;
-}
-
-.rated-count {
-  font-size: 1.5em;
-  font-weight: 800;
-}
-
-.rated,
-.rated-count {
-  color: #373F47;
-}
-
-.title-wrapper,
-.plot-wrapper,
-.year-wrapper,
-.score-wrapper {
-  margin-top: 1.5em;
-  margin-left: 2em;
+.year-title {
   font-size: .75em;
 }
 
-h4 {
-  margin-bottom: .25em;
-  color: #373F47;
-}
-
-
-.movie-title {
-  font-size: 1.25em;
-}
-
-.score {
-  color: #4CAF50;
-  margin-right: 2em;
-  margin-left: .25em;
-  font-weight: 600;
-}
-
-.score-title,
-.score {
-  font-size: 2em;
-  height: 1em;
-  margin-top: .5em;
-}
-
-.score-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 4em;
-  margin-left: 0em;
-  margin-top: 0em;
-}
-
-.plot-wrapper {
-  background-color: #EFEFEF;
-  border-radius: .5em;
-  margin-right: 1.5em;
-  margin-left: 1.5em;
-  padding: .5em;
+.nominate-button {
+  font-size: 1rem;
+  background-color: #1ABC9C;
+  border-radius: .25em;
+  text-align: center;
+  width: 10em;
+  align-self: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .nominate {
-  height: 4em;
-  width: 4em;
-  margin-right: .5em;
+  height: 1.5em;
+  width: 1.5em;
 }
 
-.nominate:hover {
+.nominate-button:hover {
   cursor: pointer;
-}
-
-
-/* BACKGROUND IMAGES */
-.flatirons {
-  background-image: url(./assets/images/flat.jpeg);
-}
-
-.ute {
-  background-image: url(./assets/images/ute.jpeg);
-}
-
-.sunset {
-  background-image: url(./assets/images/sunset.jpeg);
-}
-
-.omni {
-  background-image: url(./assets/images/omni.jpeg);
-}
-
-.coyote {
-  background-image: url(./assets/images/coyote.jpeg);
-}
-
-.national {
-  background-image: url(./assets/images/national.jpeg);
-}
-
-.copper {
-  background-image: url(./assets/images/copper.jpeg);
-}
-
-.breck {
-  background-image: url(./assets/images/breck.jpeg);
 }
 
 /* MEDIA QUERIES */
