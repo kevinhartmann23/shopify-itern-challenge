@@ -14,6 +14,10 @@ body {
   width: 100vw;
 }
 
+.hidden {
+  display: none!important
+}
+
 /* NAVIGATION */
 
 /* TEST */
@@ -41,6 +45,13 @@ body {
   margin-top: 2em;
   padding: 0em;
   width: 30em;
+}
+
+.nomination-count {
+  font-size: 2em;
+  color: #1ABC9C;
+  width: auto;
+  margin-left: 2em;
 }
 
 .search-input {
@@ -212,6 +223,60 @@ body {
 
 .nominate-button:hover {
   cursor: pointer;
+}
+
+.nominate-button:disabled {
+  background-color: lightgrey;
+  cursor: not-allowed;
+}
+
+/* BANNER DISPLAY */
+
+.banner-display {
+  margin-top: 5em;
+  width: 100vw;
+  height: 50vh;
+  background-color: #1ABC9C;
+  display: grid;
+  grid-template-columns: repeat(5, 15em);
+  grid-row: auto;
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.nominated-card {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  box-shadow: 0 -1px 3px 2px #DFE1E0;
+  border-radius: .1em;
+  justify-content: space-around;
+}
+
+.nom-image {
+  width: auto;
+  height: auto;
+}
+
+.nom-title,
+.nom-year {
+  font-size: 2em;
+  text-align: center;
+  width: auto;
+  padding: 5px;
+}
+
+.nom-year {
+  font-size: 1em;
+}
+
+.nom-foot {
+  background-color: #373F47;
+  color: #FFFFFF;
+  font-size: 2em;
+  width: 9em;
+  height: auto;
 }
 
 /* MEDIA QUERIES */
