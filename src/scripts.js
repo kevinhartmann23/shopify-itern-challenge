@@ -79,7 +79,7 @@ function displayBanner(){
   nominatedFilms.forEach(nom => {
     bannerDisplay.innerHTML +=  `
       <article class="nominated-card">
-          <div class="image-wrapper">
+          <div class="image-wrapper-nom">
             <img class="nom-image" src="${nom.Poster}" alt="nominate for an award">
           </div>
             <h2 class="nom-title">${nom.Title}</h4>

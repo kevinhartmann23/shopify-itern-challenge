@@ -233,50 +233,53 @@ body {
 /* BANNER DISPLAY */
 
 .banner-display {
-  margin-top: 5em;
   width: 100vw;
   height: 50vh;
   background-color: #1ABC9C;
   display: grid;
-  grid-template-columns: repeat(5, 15em);
+  grid-template-columns: repeat(5, 13em);
   grid-row: auto;
   grid-gap: 1em;
-  padding: 1em;
+  padding: .5em;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .nominated-card {
   display: flex;
-  width: auto;
+  width: 13em;
+  height: 17em;
   flex-direction: column;
   background-color: #FFFFFF;
-  box-shadow: 0 -1px 3px 2px #DFE1E0;
-  border-radius: .1em;
-  justify-content: space-around;
+  box-shadow: 0 -1px 3px 2px #373F47;
+  justify-content: space-between;
+}
+
+.image-wrapper-nom {
+  width: 13em;
+  height: 9em;
 }
 
 .nom-image {
-  width: auto;
-  height: auto;
+  width: inherit;
+  height: inherit;
 }
 
 .nom-title,
 .nom-year {
-  font-size: 2em;
-  text-align: center;
-  width: auto;
-  padding: 5px;
-}
-
-.nom-year {
   font-size: 1em;
+  text-align: center;
+  width: 13em;
+  padding: 0px;
 }
 
 .nom-foot {
   background-color: #373F47;
   color: #FFFFFF;
-  font-size: 2em;
-  width: 9em;
-  height: auto;
+  font-size: 1.5em;
+  width: inherit;
+  text-align: center;
+  height: 1em;
 }
 
 /* MEDIA QUERIES */
