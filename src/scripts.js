@@ -5,14 +5,18 @@ let searchInput = document.querySelector('.search-input');
 let inputLabel = document.querySelector('.label');
 let nomCount = document.querySelector('.nomination-count');
 let bannerDisplay = document.querySelector('.banner-display');
-let introTitle = document.querySelector('.intro-title')
+let introTitle = document.querySelector('.intro-title');
+let viewNominationsButton = document.querySelector('.view-nominations');
+let returnHomeButton = document.querySelector('.return-home');
+
 //EVENT HANDLERS
 searchButton.addEventListener('click', submitSearch)
+viewNominationsButton.addEventListener('click', displayBanner);
+returnHomeButton.addEventListener('click', toggleViews);
 
 //GLOBALS
 let movieData = [];
 let nominatedFilms = [];
-let nominationsLeft = 4;
 
 // FETCH REQUESTS
 
@@ -27,6 +31,7 @@ function getData(inputValue){
 
 function submitSearch(){
   getData(searchInput.value)
+  introTitle.innerText = `Search Results for ${searchInput.value} `
   searchInput.value = ''
 }
 
@@ -34,21 +39,32 @@ function nominateMovie(event){
   if(nominatedFilms.length < 4){
     event.target.disabled = true;
     event.target.innerText = `Nominated`
-    nomCount.innerText = `${nominationsLeft - nominatedFilms.length} Nominations Left...`
     nominatedFilms.push(movieData.find(movie => movie.imdbID === event.target.id))
+    viewNominationsButton.classList.remove('hidden')
   } else if (nominatedFilms.length === 4) {
     nominatedFilms.push(movieData.find(movie => movie.imdbID === event.target.id))
-    nomCount.innerText = `${nominationsLeft - nominatedFilms.length} Nominations Left...`
-    displayGrid.classList.add('hidden')
     displayBanner()
-    bannerDisplay.classList.remove('hidden')
   }
+  let nominationsLeft = 5 - nominatedFilms.length;
+  nomCount.innerText = `${nominationsLeft} Nominations Left...`
 }
 
 function removeNomination(event){
   let indexOf = nominatedFilms.indexOf(movie => movie.imdbID === event.target.id)
   nominatedFilms.splice(indexOf, 1)
   displayBanner()
+}
+
+function toggleViews(){
+  displayGrid.classList.remove('hidden')
+  bannerDisplay.classList.add('hidden')
+  searchInput.classList.remove('hidden')
+  viewNominationsButton.classList.remove('hidden')
+  returnHomeButton.classList.add('hidden')
+  inputLabel.classList.remove('hidden')
+  searchButton.classList.remove('hidden')
+  introTitle.innerText = "Search Results..."
+  nomCount.innerText = `${nominationsLeft} Nominations Left...`
 }
 
 
@@ -77,11 +93,24 @@ function createGrid(){
 }
 
 function displayBanner(){
+
+  if(nominatedFilms.length <= 4){
+    returnHomeButton.classList.remove('hidden')
+    let nominationsLeft = 5 - nominatedFilms.length;
+    nomCount.innerText = `${nominationsLeft} Nominations Left...`
+    introTitle.innerText = "Your Current Nominations..."
+  } else {
+    returnHomeButton.classList.add('hidden')
+    introTitle.innerText = "Your Nominations Are..."
+    nomCount.innerText = "Thanks for your Nominations!"
+  }
+
+  displayGrid.classList.add('hidden')
+  bannerDisplay.classList.remove('hidden')
   searchInput.classList.add('hidden')
+  viewNominationsButton.classList.add('hidden')
   inputLabel.classList.add('hidden')
   searchButton.classList.add('hidden')
-  introTitle.innerText = "Your Nominations Are..."
-  nomCount.innerText = "Thanks for your Nominations!"
   bannerDisplay.innerHTML = ''
   nominatedFilms.forEach(nom => {
     bannerDisplay.innerHTML +=  `
@@ -100,16 +129,17 @@ function displayBanner(){
   })
 
   let removeNominationButton = document.querySelectorAll('.remove-nominate-button')
-
   removeNominationButton.forEach(button => {
     button.addEventListener('click', removeNomination)
+    if(nominatedFilms.length > 4){
+      button.classList.add('hidden')
+    }
   })
 
   let finalResults = document.querySelectorAll('.final-results')
-
-
-  // if(nominatedFilms.length === 5){
-  //   removeNominationButton.classList.add('hidden')
-  //   finalResults.classList.remove('hidden')
-  // }
+  finalResults.forEach(e => {
+    if(nominatedFilms.length > 4){
+      e.classList.remove('hidden')
+    }
+  })
 }

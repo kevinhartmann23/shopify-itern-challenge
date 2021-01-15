@@ -44,7 +44,19 @@ body {
   list-style-type: none;
   margin-top: 2em;
   padding: 0em;
-  width: 45em;
+  width: 50em;
+}
+
+.view-nominations,
+.return-home {
+  font-size: 1rem;
+  background-color: #1ABC9C;
+  border-radius: .25em;
+  text-align: center;
+  width: 10em;
+  align-self: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .nomination-count {
@@ -53,7 +65,7 @@ body {
   width: 32em;
   height: 1em;
   margin-left: 1em;
-  margin-top: 2em;
+  margin-top: 1.25em;
 }
 
 .search-input {
@@ -276,13 +288,25 @@ body {
   padding: 0px;
 }
 
-.nom-foot {
+.nom-foot,
+.final-results {
   background-color: #373F47;
   color: #FFFFFF;
   font-size: 1.5em;
   width: inherit;
   text-align: center;
-  height: 1em;
+}
+
+.remove-nominate-button {
+  font-size: .75rem;
+  background-color: #1ABC9C;
+  border-radius: .25em;
+  text-align: center;
+  width: 12em;
+  height: auto;
+  align-self: center;
+  align-items: center;
+  padding: 10px;
 }
 
 /* MEDIA QUERIES */
@@ -306,12 +330,22 @@ body {
     grid-template-columns: repeat(3, 18.5em);
     grid-template-rows: repeat(4, 28em);
   }
+
+  .banner-display {
+    grid-template-columns: repeat(3, 13em);
+    height: 100vh;
+  }
 }
 
 @media screen and (max-width:900px) {
   .card-display {
     grid-template-columns: repeat(2, 18.5em);
     grid-template-rows: repeat(6, 28em);
+  }
+
+  .banner-display {
+    grid-template-columns: repeat(2, 13em);
+    height: 100vh;
   }
 }
 
@@ -323,9 +357,6 @@ body {
     height: 5em;
   }
 
-  .bag,
-  .score-card,
-  .logo,
   .menu-wrapper {
     display: none;
   }
@@ -346,5 +377,10 @@ body {
   .card-display {
     grid-template-columns: repeat(1, 18.5em);
     grid-template-rows: repeat(10, 28.5em);
+  }
+
+  .banner-display {
+    grid-template-columns: repeat(1, 13em);
+    height: 100vh;
   }
 }
