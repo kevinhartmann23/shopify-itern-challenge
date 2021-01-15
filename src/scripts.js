@@ -33,7 +33,7 @@ function submitSearch(){
 function nominateMovie(event){
   if(nominatedFilms.length < 4){
     event.target.disabled = true;
-    event.target.innerText = `Remove Nomination`
+    event.target.innerText = `Nominated`
     nomCount.innerText = `${nominationsLeft - nominatedFilms.length} Nominations Left...`
     nominatedFilms.push(movieData.find(movie => movie.imdbID === event.target.id))
   } else if (nominatedFilms.length === 4) {
@@ -46,7 +46,7 @@ function nominateMovie(event){
 }
 
 function removeNomination(event){
-  let indexOf = nominatedFilms.indexOf(movie => movie.imdbID === event.target.id))
+  let indexOf = nominatedFilms.indexOf(movie => movie.imdbID === event.target.id)
   nominatedFilms.splice(indexOf, 1)
   displayBanner()
 }
@@ -93,7 +93,7 @@ function displayBanner(){
             <h3 class="nom-year">Year: ${nom.Year}</h4>
             <div class="nom-foot">
             <h4 class="final-result hidden">Nominated</h4>
-            <button id='${nom.imdbID}' class='remove-nominate-button'>Nominate</button>
+            <button id='${nom.imdbID}' class='remove-nominate-button'>Remove Nomination</button>
             </div>
       </article>
       `
@@ -104,4 +104,12 @@ function displayBanner(){
   removeNominationButton.forEach(button => {
     button.addEventListener('click', removeNomination)
   })
+
+  let finalResults = document.querySelectorAll('.final-results')
+
+
+  // if(nominatedFilms.length === 5){
+  //   removeNominationButton.classList.add('hidden')
+  //   finalResults.classList.remove('hidden')
+  // }
 }
