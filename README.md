@@ -1,5 +1,7 @@
 # Shopify: UX Developer Intern & Web Developer Intern Challenge - Summer 2021
 
+[DEPLOYED SITE](https://kevinhartmann23.github.io/shopify-itern-challenge/src/index.html)
+
 ## Contributor
 #### Kevin Hartmann 
 _**Front-end Software Engineer**_ - _Mod 2 Student_ - [Turing School Of Software Design](https://turing.io/programs/)
