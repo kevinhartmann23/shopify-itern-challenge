@@ -2,6 +2,7 @@
 let displayGrid = document.querySelector('.card-display');
 let searchButton = document.querySelector('.search');
 let searchInput = document.querySelector('.search-input');
+let inputLabel = document.querySelector('.label');
 let nomCount = document.querySelector('.nomination-count');
 let bannerDisplay = document.querySelector('.banner-display');
 let introTitle = document.querySelector('.intro-title')
@@ -31,8 +32,8 @@ function submitSearch(){
 
 function nominateMovie(event){
   if(nominatedFilms.length < 4){
-    event.target.classList.add('disabled')
-    event.target.classList.innerHTML = `Nominated<img id="${event.target.id}" class="nominate" src="./assets/nominated.png" alt="movie nominated for an award">`
+    event.target.disabled = true;
+    event.target.innerText = `Nominated`
     nomCount.innerText = `${nominationsLeft - nominatedFilms.length} Nominations Left...`
     nominatedFilms.push(movieData.find(movie => movie.imdbID === event.target.id))
   } else if (nominatedFilms.length === 4) {
@@ -48,6 +49,7 @@ function nominateMovie(event){
 
 //DOM HELPERS
 function createGrid(){
+  nomCount.innerText = 'Nominate 5 Films...'
   displayGrid.innerHTML = ''
   movieData.forEach(movie => {
   displayGrid.innerHTML += `
@@ -57,9 +59,7 @@ function createGrid(){
       </div>
         <h4 class="movie-title">${movie.Title}</h4>
         <h4 class="year-title">Year: ${movie.Year}</h4>
-        <button id='${movie.imdbID}' class='nominate-button'>Nominate
-        <img id="${movie.imdbID}" class="nominate" src="./assets/nominate.png" alt="nominate for an award">
-        </button>
+        <button id='${movie.imdbID}' class='nominate-button'>Nominate</button>
   </article>
   `
   })
@@ -72,6 +72,7 @@ function createGrid(){
 
 function displayBanner(){
   searchInput.classList.add('hidden')
+  inputLabel.classList.add('hidden')
   searchButton.classList.add('hidden')
   introTitle.innerText = "Your Nominations Are..."
   nomCount.innerText = "Thanks for your Nominations!"
