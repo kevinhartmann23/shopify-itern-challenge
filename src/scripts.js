@@ -24,7 +24,7 @@ function getData(inputValue){
   fetch(`https://www.omdbapi.com/?s=${inputValue}&apikey=be68040e`)
     .then(response => response.json())
     .then(data => {
-      movieData = data.Search
+      movieData = data
       createGrid();
     })
 }
