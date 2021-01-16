@@ -21,7 +21,7 @@ let nominatedFilms = [];
 // FETCH REQUESTS
 
 function getData(inputValue){
-  fetch(`http://www.omdbapi.com/?s=${inputValue}&apikey=be68040e`)
+  fetch(`https://www.omdbapi.com/?s=${inputValue}&apikey=be68040e`)
     .then(response => response.json())
     .then(data => {
       movieData = data.Search
