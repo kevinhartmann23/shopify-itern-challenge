@@ -21,12 +21,14 @@ let nominatedFilms = [];
 // FETCH REQUESTS
 
 function getData(inputValue){
-  fetch(`https://www.omdbapi.com/?s=${inputValue}&apikey=be68040e`)
+  fetch(`http://www.omdbapi.com/?s=${inputValue}&apikey=be68040e`)
     .then(response => response.json())
     .then(data => {
-      movieData = data
+      movieData = data.Search
+      console.log(movieData)
       createGrid();
     })
+    .catch(error => console.log(error))
 }
 
 function submitSearch(){
@@ -64,13 +66,17 @@ function toggleViews(){
   inputLabel.classList.remove('hidden')
   searchButton.classList.remove('hidden')
   introTitle.innerText = "Search Results..."
+  if(movieData.length === 5){
+    nomCount.innerText = "Thanks for your Nominations!"
+  } else
   nomCount.innerText = `${nominationsLeft} Nominations Left...`
 }
 
 
 
 //DOM HELPERS
-function createGrid(){
+
+function createGrid(movieSearchResults){
   nomCount.innerText = 'Nominate 5 Films...'
   displayGrid.innerHTML = ''
   movieData.forEach(movie => {
@@ -94,7 +100,7 @@ function createGrid(){
 
 function displayBanner(){
 
-  if(nominatedFilms.length <= 4){
+  if(nominatedFilms.length < 4){
     returnHomeButton.classList.remove('hidden')
     let nominationsLeft = 5 - nominatedFilms.length;
     nomCount.innerText = `${nominationsLeft} Nominations Left...`
