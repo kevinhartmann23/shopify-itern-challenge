@@ -1,13 +1,31 @@
 # Shopify: UX Developer Intern & Web Developer Intern Challenge - Summer 2021
 
-[DEPLOYED SITE](https://kevinhartmann23.github.io/shopify-itern-challenge/src/index.html)
-
 ## Contributor
 #### Kevin Hartmann 
 _**Front-end Software Engineer**_ - _Mod 2 Student_ - [Turing School Of Software Design](https://turing.io/programs/)
 - [application](https://jobs.smartrecruiters.com/ni/Shopify/ee14b4f1-62ec-4a47-850b-2311c57f855b-front-end-developer-intern-remote-summer-2021)
 - [linkedIn](https://www.linkedin.com/in/kevin-hartmann/)
 - [github](https://github.com/kevinhartmann23)
+
+### Instructions
+- `clone` down this repository
+- run `npm install`
+- open `index.html`
+
+If you would like to make contributions, please fork the repo first.
+
+### Challenges & Wins
+#### Wins
+- **Timing**: Given the amount of time and the workload I currently have with school, I am proud of what I accomplished. BUT not taking any excuses and giving this a try was a huge wine.
+
+#### Challenges
+- **Timing**: This past week, has been my final project and final assessment for school. Taking this code challenge on was a bit of an overload. Having more time that a few days to work on this would have generated a much better product.
+- **Git Workflow & Organization**: With the time constraint my organization fell short. 
+
+### Future Iterations
+- Implement TDD
+- Clean Up Responsiveness and Accesibility
+- Build a login page
 
 ### Task 
 **The Shoppies: Movie awards for entrepreneurs**
